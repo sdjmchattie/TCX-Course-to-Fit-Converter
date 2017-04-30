@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/quamen/tcx.git
-  revision: 9d93b2aa11ee522039d96794339b8a1f702a7846
-  specs:
-    tcx (0.0.1)
-      ox
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,7 +7,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  tcx!
+  ox
 
 BUNDLED WITH
    1.14.6
