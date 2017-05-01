@@ -1,17 +1,15 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require_relative 'tcx_parser.rb'
-require 'ox'
+require 'nokogiri'
+require_relative 'tcx_elements.rb'
 
-module TcxToFit
+module Tcx
   class TcxFile
     attr_reader :data
 
     def initialize(tcx_data)
-      tcx_parser = TcxParser.new(tcx_data)
-      Ox.sax_parse(tcx_parser, tcx_data)
-      @data = tcx_parser.parsed_tcx
+      @data = TrainingCenterDatabase.parse(Nokogiri::XML(tcx_data), :single= => true)
     end
   end
 end
